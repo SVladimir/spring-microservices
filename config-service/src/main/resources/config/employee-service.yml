@@ -14,3 +14,13 @@ spring:
     user:
       name: test
       password: 1234
+  output:
+    ansi:
+      enabled: always
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
+springdoc:
+  packagesToScan: com.svs.services.employee

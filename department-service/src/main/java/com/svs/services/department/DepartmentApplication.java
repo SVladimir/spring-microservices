@@ -18,9 +18,10 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@EnableDiscoveryClient
 @EnableFeignClients
-@EnableSwagger2
+@OpenAPIDefinition(info =
+@Info(title = "Department API", version = "1.0", description = "Documentation Department API v1.0")
+)
 public class DepartmentApplication implements CommandLineRunner {
 
   @Autowired
