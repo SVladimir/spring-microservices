@@ -54,7 +54,7 @@ public class OrganizationController {
 		return organization;
 	}
 	
-	@GetMapping("/{id}/with-departments-and-employees")
+	@GetMapping("/{id}/with-departments-and-employees/")
 	public Organization findByIdWithDepartmentsAndEmployees(@PathVariable("id") Long id) {
 		LOGGER.info("Organization find: id={}", id);
 		Organization organization = repository.findById(id);
@@ -62,12 +62,16 @@ public class OrganizationController {
 		return organization;
 	}
 	
-	@GetMapping("/{id}/with-employees")
+	@GetMapping("/{id}/with-employees/")
 	public Organization findByIdWithEmployees(@PathVariable("id") Long id) {
 		LOGGER.info("Organization find: id={}", id);
 		Organization organization = repository.findById(id);
 		organization.setEmployees(employeeClient.findByOrganization(organization.getId()));
 		return organization;
+	}
+	@GetMapping("/organization/register")
+	public String showRegisterPage() {
+		return "register";
 	}
 	
 }
