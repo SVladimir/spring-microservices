@@ -69,5 +69,8 @@ public class OrganizationController {
 		organization.setEmployees(employeeClient.findByOrganization(organization.getId()));
 		return organization;
 	}
-	
+	@GetMapping("/organization/register")
+	public String showRegisterPage() {
+		return "register";
+	}
 }
