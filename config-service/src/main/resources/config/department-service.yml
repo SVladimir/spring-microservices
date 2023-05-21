@@ -14,7 +14,15 @@ springdoc:
   packagesToScan: com.svs.services.department
 
 spring:
-  security:
-    user:
-      name: test
-      password: 1234
+  output:
+    ansi:
+      enabled: always
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
+
