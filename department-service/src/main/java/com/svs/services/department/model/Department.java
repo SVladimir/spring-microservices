@@ -1,5 +1,8 @@
 package com.svs.services.department.model;
 
+
+
+import jakarta.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.AllArgsConstructor;
@@ -9,7 +12,7 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 import lombok.experimental.SuperBuilder;
 import org.springframework.data.mongodb.core.mapping.Document;
-
+@Table
 @Data
 @SuperBuilder
 @Accessors(chain = true)
